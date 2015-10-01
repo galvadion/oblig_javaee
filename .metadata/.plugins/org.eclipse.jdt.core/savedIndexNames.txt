@@ -1,0 +1,4 @@
+INDEX VERSION 1.127+C:\Users\Diego\Documents\GitHub\oblig_javaee\.metadata\.plugins\org.eclipse.jdt.core
+3367819703.index
+3938727403.index
+1351004774.index

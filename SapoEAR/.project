@@ -6,6 +6,7 @@
 		<project>Sapo-JPA</project>
 		<project>Sapo-EJB</project>
 		<project>Sapo-EJBClient</project>
+		<project>SapoWEB</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

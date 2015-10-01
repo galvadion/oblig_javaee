@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="Sapo-JPA">
+	<jta-data-source>java:/GeneralSAPODS</jta-data-source>
+	<properties>
+		<property name="hibernate.hbm2ddl.auto" value="update"/>
+		<property name="javax.persistence.schema-generation-target" value="database"/>
+		<property name="javax.persistence.schema-generation-action" value="create"/>
+	</properties>
+	</persistence-unit>
+	<persistence-unit name="mongo" transaction-type="JTA">
+      <provider>org.hibernate.ogm.jpa.HibernateOgmPersistence</provider>
+<class>entidades.Perro</class> 
+       <properties>
+           <property name="hibernate.ogm.datastore.provider" value="mongodb" />
+<property name="hibernate.ogm.datastore.grid_dialect" value="org.hibernate.ogm.datastore.mongodb.MongoDBDialect" />
+           <property name="hibernate.ogm.datastore.database" value="generalMongo"/>
+ 	<property name="hibernate.ogm.mongodb.host" value="127.0.0.1"/>
+           <property name="hibernate.ogm.mongodb.port" value="27017"/>
+           <property name="jboss.as.jpa.providerModule" value="org.hibernate:ogm" />
+       </properties>
+   </persistence-unit>
+	
+</persistence>

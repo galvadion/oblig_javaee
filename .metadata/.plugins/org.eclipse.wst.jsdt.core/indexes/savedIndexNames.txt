@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\Diego\Documents\GitHub\oblig_javaee\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2284966016.index
+3386119063.index
+1528297974.index
+1351004774.index
+1106020148.index
+3720274378.index

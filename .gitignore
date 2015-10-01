@@ -1,1 +1,4 @@
 *.classpath
+*.lock
+*.log
+.metadata/.plugins/org.jboss.tools.foundation.core/ECF_REMOTE_CACHE/985faf2a9917dc03516ec9ebe15c7e887c2d46f3-4482211838873901787.tmp
