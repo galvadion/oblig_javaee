@@ -22,6 +22,7 @@ public class RegistroMovimientos implements Serializable {
 	private int movimiento;
 	private Date Fecha;
 	private AlmacenVirtual Almacen;
+	private boolean entrada;
 	private static final long serialVersionUID = 1L;
 
 	public RegistroMovimientos() {
@@ -74,6 +75,12 @@ public class RegistroMovimientos implements Serializable {
 	}
 	public void setMovimiento(int movimiento) {
 		this.movimiento = movimiento;
+	}
+	public boolean isEntrada() {
+		return entrada;
+	}
+	public void setEntrada(boolean entrada) {
+		this.entrada = entrada;
 	}
    
 }
