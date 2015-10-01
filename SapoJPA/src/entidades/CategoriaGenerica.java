@@ -1,0 +1,49 @@
+package entidades;
+
+import java.io.Serializable;
+import java.lang.String;
+import java.util.List;
+
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: CategoriaGenerica
+ *
+ */
+@Entity
+
+public class CategoriaGenerica implements Serializable {
+
+	   
+	@Id
+	private long Id;
+	private String Nombre;
+	private List<ProductoGenerico> Productos;
+	private static final long serialVersionUID = 1L;
+
+	public CategoriaGenerica() {
+		super();
+	}   
+	public long getId() {
+		return this.Id;
+	}
+
+	public void setId(long Id) {
+		this.Id = Id;
+	}   
+	public String getNombre() {
+		return this.Nombre;
+	}
+
+	public void setNombre(String Nombre) {
+		this.Nombre = Nombre;
+	}   
+	public List<ProductoGenerico> getProductos() {
+		return this.Productos;
+	}
+
+	public void setProductos(List<ProductoGenerico> Productos) {
+		this.Productos = Productos;
+	}
+   
+}

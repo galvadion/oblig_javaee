@@ -1,0 +1,73 @@
+package entidades;
+
+import java.io.Serializable;
+import java.lang.String;
+import java.util.List;
+
+import javax.persistence.*;
+
+/**
+ * Entity implementation class for Entity: ProductoGenerico
+ *
+ */
+@Entity
+
+public class ProductoGenerico implements Serializable {
+
+	   
+	@Id
+	private long Id;
+	private String Nombre;
+	private String Descripcion;
+	private List<Imagen> Imagenes;
+	private CategoriaGenerica Categoria;
+	private ProductoAlmacenStock ProductoAlmacenStock;
+	private static final long serialVersionUID = 1L;
+
+	public ProductoGenerico() {
+		super();
+	}   
+	public long getId() {
+		return this.Id;
+	}
+
+	public void setId(long Id) {
+		this.Id = Id;
+	}   
+	public String getNombre() {
+		return this.Nombre;
+	}
+
+	public void setNombre(String Nombre) {
+		this.Nombre = Nombre;
+	}   
+	public String getDescripcion() {
+		return this.Descripcion;
+	}
+
+	public void setDescripcion(String Descripcion) {
+		this.Descripcion = Descripcion;
+	}   
+	public List<Imagen> getImagenes() {
+		return this.Imagenes;
+	}
+
+	public void setImagenes(List<Imagen> Imagenes) {
+		this.Imagenes = Imagenes;
+	}   
+	public CategoriaGenerica getCategoria() {
+		return this.Categoria;
+	}
+
+	public void setCategoria(CategoriaGenerica Categoria) {
+		this.Categoria = Categoria;
+	}   
+	public ProductoAlmacenStock getProductoAlmacenStock() {
+		return this.ProductoAlmacenStock;
+	}
+
+	public void setProductoAlmacenStock(ProductoAlmacenStock ProductoAlmacenStock) {
+		this.ProductoAlmacenStock = ProductoAlmacenStock;
+	}
+   
+}
