@@ -2,6 +2,8 @@ package entidades;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
 
 /**
@@ -17,6 +19,8 @@ public class AlmacenVirtual implements Serializable {
 	private long Id;
 	private String Nombre;
 	private String Direccion;
+	private List<Categoria> Categorias;
+	private List<UsuarioCliente> Clientes;
 	private static final long serialVersionUID = 1L;
 
 	public AlmacenVirtual() {
@@ -33,6 +37,7 @@ public class AlmacenVirtual implements Serializable {
 		return this.Nombre;
 	}
 
+	
 	public void setNombre(String Nombre) {
 		this.Nombre = Nombre;
 	}   
@@ -42,6 +47,18 @@ public class AlmacenVirtual implements Serializable {
 
 	public void setDireccion(String Direccion) {
 		this.Direccion = Direccion;
+	}
+	public List<Categoria> getCategorias() {
+		return Categorias;
+	}
+	public void setCategorias(List<Categoria> categorias) {
+		Categorias = categorias;
+	}
+	public List<UsuarioCliente> getClientes() {
+		return Clientes;
+	}
+	public void setClientes(List<UsuarioCliente> clientes) {
+		Clientes = clientes;
 	}
    
 }

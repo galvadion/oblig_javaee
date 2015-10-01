@@ -19,6 +19,7 @@ public class Categoria implements Serializable {
 	private long Id;
 	private String Nombre;
 	private List<Producto> Productos;
+	private AlmacenVirtual Almacen;
 	private static final long serialVersionUID = 1L;
 
 	public Categoria() {
@@ -44,6 +45,12 @@ public class Categoria implements Serializable {
 
 	public void setProductos(List<Producto> Producto) {
 		this.Productos = Producto;
+	}
+	public AlmacenVirtual getAlmacen() {
+		return Almacen;
+	}
+	public void setAlmacen(AlmacenVirtual almacen) {
+		this.Almacen = almacen;
 	}
    
 }

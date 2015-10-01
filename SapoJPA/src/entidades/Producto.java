@@ -2,7 +2,10 @@ package entidades;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.util.List;
+
 import javax.persistence.*;
+
 
 /**
  * Entity implementation class for Entity: Producto
@@ -14,11 +17,11 @@ public class Producto implements Serializable {
 
 	   
 	@Id
-	private ObjectId Id;
+	private long Id;
 	private String Nombre;
 	private String Descripcion;
-	private List<Imagenes> Imagenes;
-	private List<Etiquetas> Etiquetas;
+	private List<Imagen> Imagenes;
+	private List<Etiqueta> Etiquetas;
 	private Categoria categoria;
 	private int Stock;
 	private static final long serialVersionUID = 1L;
@@ -26,11 +29,11 @@ public class Producto implements Serializable {
 	public Producto() {
 		super();
 	}   
-	public ObjectId getId() {
+	public long getId() {
 		return this.Id;
 	}
 
-	public void setId(ObjectId Id) {
+	public void setId(long Id) {
 		this.Id = Id;
 	}   
 	public String getNombre() {
@@ -47,18 +50,18 @@ public class Producto implements Serializable {
 	public void setDescripcion(String Descripcion) {
 		this.Descripcion = Descripcion;
 	}   
-	public List<Imagenes> getImagenes() {
+	public List<Imagen> getImagenes() {
 		return this.Imagenes;
 	}
 
-	public void setImagenes(List<Imagenes> Imagenes) {
+	public void setImagenes(List<Imagen> Imagenes) {
 		this.Imagenes = Imagenes;
 	}   
-	public List<Etiquetas> getEtiquetas() {
+	public List<Etiqueta> getEtiquetas() {
 		return this.Etiquetas;
 	}
 
-	public void setEtiquetas(List<Etiquetas> Etiquetas) {
+	public void setEtiquetas(List<Etiqueta> Etiquetas) {
 		this.Etiquetas = Etiquetas;
 	}   
 	public Categoria getCategoria() {
