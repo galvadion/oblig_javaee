@@ -16,18 +16,18 @@ public class FachadaTiendaImpl implements FachadaTienda{
 	private TiendaDAO dao; 
 
 	@Override
-	public void save(Tienda users) {
-		dao.save(users);
+	public void save(Tienda tienda) {
+		dao.save(tienda);
 	}
 
 	@Override
-	public Tienda update(Tienda users) {
-		return dao.update(users);
+	public Tienda update(Tienda tienda) {
+		return dao.update(tienda);
 	}
 
 	@Override
-	public void delete(Tienda users) {
-		dao.delete(users.getId(), Tienda.class);
+	public void delete(Tienda tienda) {
+		dao.delete(tienda.getId(), Tienda.class);
 	}
 
 	@Override
