@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package Util;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.FileHandler;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+/**
+ *
+ * @author 43943085
+ */
+public class Logger_Rep {
+    
+    public void LogControlledException(Exception e){
+        Logger log= Logger.getLogger("Exception");
+        FileHandler fh;
+        try{
+            fh=new FileHandler("Exception.log",true);
+            log.addHandler(fh);
+            SimpleFormatter format= new SimpleFormatter();
+            fh.setFormatter(format);
+            log.info("EXCEPCION | "+e.getMessage() + " | "+ e.getCause().getMessage());
+            fh.close();
+        }catch(IOException | SecurityException ex){
+            ex.getMessage();
+        }
+    }
+    public void LogRegisteredEvent(Object o,String datas){
+        Logger log= Logger.getLogger("Register");
+        FileHandler fh;
+        try{
+            fh=new FileHandler("Register.log",true);
+            log.addHandler(fh);
+            SimpleFormatter format= new SimpleFormatter();
+            fh.setFormatter(format);
+            log.info("INFO | Se ha agregado un objeto del tipo:" + o.getClass() + " | Datos : " + datas);
+            fh.close();
+        }catch(IOException | SecurityException e){
+            e.getMessage();
+        }
+    }
+    public void LogNotControlled(Exception e){
+        Logger log= Logger.getLogger("NotControlled");
+        FileHandler fh;
+        try{
+            fh=new FileHandler("NotControlled.log",true);
+            log.addHandler(fh);
+            SimpleFormatter format= new SimpleFormatter();
+            fh.setFormatter(format);
+            log.info("ERROR | "+e.getMessage() + " | "+ e.getStackTrace());
+            fh.close();
+        }catch(IOException | SecurityException ex){
+            ex.getMessage();
+        }
+    }
+
+    public void LogNotControlled(Error e) {
+       Logger log= Logger.getLogger("NotControlled");
+        FileHandler fh;
+        try{
+            fh=new FileHandler("NotControlled.log",true);
+            log.addHandler(fh);
+            SimpleFormatter format= new SimpleFormatter();
+            fh.setFormatter(format);
+            log.info("ERROR | "+e.getMessage() + " | "+ e.getStackTrace());
+            fh.close();
+        }catch(IOException | SecurityException ex){
+            ex.getMessage();
+        }
+    }
+}

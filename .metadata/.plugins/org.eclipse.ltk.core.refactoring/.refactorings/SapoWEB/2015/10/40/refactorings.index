@@ -1,0 +1,8 @@
+1443989831969	Move 'Almacen' to 'backend'
+1443990121565	Rename resource 'resourses'
+1443990439728	Move 'login.xhtml' to 'backend'
+1443990548521	Move 'header.xhtml' to 'template'
+1443990550612	Move 'home.xhtml' to 'backend'
+1443990571917	Move 'leftBar.xhtml' to 'template'
+1443990598423	Move 'templateBackend.xhtml' to 'template'
+1443991075978	Delete element
