@@ -3,20 +3,52 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
-
-	<!-- 
-		Replace path to template, title, header and body
-		with actual data.
-	 -->
-	<ui:composition template="/templates/common.xhtml">
-			<ui:define name="pageTitle">Title</ui:define>
-			<ui:define name="pageHeader">Header</ui:define>
-			<ui:define name="body">
-				<form jsfc="h:form" id="Form">
-				
-				</form>
-			</ui:define>
+      xmlns:m="http://code.google.com/p/gmaps4jsf/">
+	
+	<ui:composition template="/backend/template/templateBackend.xhtml">
+		<ui:define name="content">
+				<h2>Crear almacen virutal</h2>
+					<div class="row">
+						<div class="col-xs-7">
+							<h:form styleClass="form-horizontal">
+								<div class="form-group">
+									<h:outputLabel value="Nombre" styleClass="control-label col-sm-2" />
+									<div class="col-sm-10">
+										<h:inputText value="#{almacenBean.nombre}" styleClass="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<h:outputLabel value="Ubicacion" styleClass="control-label col-sm-2" />
+									<div class="col-sm-10">
+										<m:map width="500px" height="500px" latitude="-34.8977714" longitude="-56.165" jsVariable="map1" zoom="13"
+      mapTypeId= "google.maps.MapTypeId.ROADMAP"
+      actionListener="#{map.handleMapClick}">
+						   
+						<f:ajax render="markerNotification"/>
+						<m:eventListener eventName="click" jsFunction="addMarkerHere"/>>
+											
+										</m:map>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<h:commandButton action="#{almacenBean.crearAlmacen()}" value="Crear" styleClass="btn btn-default" />
+									</div>
+								</div>
+							</h:form>
+						</div>
+					</div>
+					<h:messages />
+					<script>
+				function addMarkerHere (event) {  		  
+					var marker = new google.maps.Marker({  
+						position: new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()),
+						map: map1,
+						draggable:true
+					});  
+				} 			
+			</script>
+		</ui:define>
 	</ui:composition>
-
+	
 </html>

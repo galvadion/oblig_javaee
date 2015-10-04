@@ -18,7 +18,8 @@ public class AlmacenVirtual implements Serializable {
 	@Id
 	private long Id;
 	private String Nombre;
-	private String Direccion;
+	private String Latitud;
+	private String Longitud;
 	private List<Categoria> Categorias;
 	private List<UsuarioCliente> Clientes;
 	private static final long serialVersionUID = 1L;
@@ -41,12 +42,18 @@ public class AlmacenVirtual implements Serializable {
 	public void setNombre(String Nombre) {
 		this.Nombre = Nombre;
 	}   
-	public String getDireccion() {
-		return this.Direccion;
+	
+	public String getLatitud() {
+		return Latitud;
 	}
-
-	public void setDireccion(String Direccion) {
-		this.Direccion = Direccion;
+	public void setLatitud(String latitud) {
+		Latitud = latitud;
+	}
+	public String getLongitud() {
+		return Longitud;
+	}
+	public void setLongitud(String longitud) {
+		Longitud = longitud;
 	}
 	public List<Categoria> getCategorias() {
 		return Categorias;
