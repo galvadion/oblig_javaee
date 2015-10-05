@@ -2,27 +2,27 @@ package entidades;
 
 import java.io.Serializable;
 import java.lang.String;
-import java.util.List;
-
 import javax.persistence.*;
 
 /**
- * Entity implementation class for Entity: CategoriaGenerica
+ * Entity implementation class for Entity: Imagen
  *
  */
 @Entity
 
-public class CategoriaGenerica implements Serializable {
+public class Imagen implements Serializable {
 
 	   
 	@Id
 	private long Id;
 	private String Nombre;
-	@OneToMany
-	private List<ProductoGenerico> Productos;
+	@ManyToOne
+	private ProductoGenerico productoGenerico;
+	@Transient
+	private Producto producto;
 	private static final long serialVersionUID = 1L;
 
-	public CategoriaGenerica() {
+	public Imagen() {
 		super();
 	}   
 	public long getId() {
@@ -39,12 +39,12 @@ public class CategoriaGenerica implements Serializable {
 	public void setNombre(String Nombre) {
 		this.Nombre = Nombre;
 	}   
-	public List<ProductoGenerico> getProductos() {
-		return this.Productos;
+	public Producto getProducto() {
+		return this.Producto;
 	}
 
-	public void setProductos(List<ProductoGenerico> Productos) {
-		this.Productos = Productos;
+	public void setProducto(Producto Producto) {
+		this.Producto = Producto;
 	}
    
 }

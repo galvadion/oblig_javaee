@@ -6,13 +6,14 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
 /**
- * Entity implementation class for Entity: ProductoGenerico
+ * Entity implementation class for Entity: Producto
  *
  */
 @Entity
 
-public class ProductoGenerico implements Serializable {
+public class Producto implements Serializable {
 
 	   
 	@Id
@@ -21,13 +22,14 @@ public class ProductoGenerico implements Serializable {
 	private String Descripcion;
 	@OneToMany
 	private List<Imagen> Imagenes;
+	@ManyToMany
+	private List<Etiqueta> Etiquetas;
 	@ManyToOne
-	private CategoriaGenerica Categoria;
-	@ManyToOne
-	private ProductoAlmacenStock ProductoAlmacenStock;
+	private Categoria categoria;
+	private int Stock;
 	private static final long serialVersionUID = 1L;
 
-	public ProductoGenerico() {
+	public Producto() {
 		super();
 	}   
 	public long getId() {
@@ -58,19 +60,26 @@ public class ProductoGenerico implements Serializable {
 	public void setImagenes(List<Imagen> Imagenes) {
 		this.Imagenes = Imagenes;
 	}   
-	public CategoriaGenerica getCategoria() {
-		return this.Categoria;
+	public List<Etiqueta> getEtiquetas() {
+		return this.Etiquetas;
 	}
 
-	public void setCategoria(CategoriaGenerica Categoria) {
-		this.Categoria = Categoria;
+	public void setEtiquetas(List<Etiqueta> Etiquetas) {
+		this.Etiquetas = Etiquetas;
 	}   
-	public ProductoAlmacenStock getProductoAlmacenStock() {
-		return this.ProductoAlmacenStock;
+	public Categoria getCategoria() {
+		return this.categoria;
 	}
 
-	public void setProductoAlmacenStock(ProductoAlmacenStock ProductoAlmacenStock) {
-		this.ProductoAlmacenStock = ProductoAlmacenStock;
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}   
+	public int getStock() {
+		return this.Stock;
+	}
+
+	public void setStock(int Stock) {
+		this.Stock = Stock;
 	}
    
 }

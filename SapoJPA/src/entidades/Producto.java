@@ -20,8 +20,11 @@ public class Producto implements Serializable {
 	private long Id;
 	private String Nombre;
 	private String Descripcion;
+	@Transient
 	private List<Imagen> Imagenes;
+	@ManyToMany
 	private List<Etiqueta> Etiquetas;
+	@ManyToOne
 	private Categoria categoria;
 	private int Stock;
 	private static final long serialVersionUID = 1L;

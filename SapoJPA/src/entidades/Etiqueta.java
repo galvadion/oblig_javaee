@@ -18,6 +18,7 @@ public class Etiqueta implements Serializable {
 	@Id
 	private long Id;
 	private String Nombre;
+	@ManyToMany
 	private List<Producto> Productos;
 	private static final long serialVersionUID = 1L;
 

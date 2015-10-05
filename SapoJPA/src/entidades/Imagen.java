@@ -16,6 +16,9 @@ public class Imagen implements Serializable {
 	@Id
 	private long Id;
 	private String Nombre;
+	@ManyToOne
+	private ProductoGenerico productoGenerico;
+	@Transient
 	private Producto Producto;
 	private static final long serialVersionUID = 1L;
 
@@ -42,6 +45,12 @@ public class Imagen implements Serializable {
 
 	public void setProducto(Producto Producto) {
 		this.Producto = Producto;
+	}
+	public ProductoGenerico getProductoGenerico() {
+		return productoGenerico;
+	}
+	public void setProductoGenerico(ProductoGenerico productoGenerico) {
+		this.productoGenerico = productoGenerico;
 	}
    
 }
